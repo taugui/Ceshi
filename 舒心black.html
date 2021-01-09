@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Apple Support</title>
+		<style>
+			body {
+				margin: 0;
+			}
+			nav {
+				height: 50px;
+				background: black;
+				color: white;
+				display: flex;
+				align-items: center;
+			}
+
+			nav a {
+				margin: 0 30px;
+			}
+
+			.content {
+				margin: 0 auto;
+			}
+
+			.menu {
+				position: absolute;
+			    right: 0;
+			    top: 50px;
+
+			    padding: 100px;
+			    border: 1px solid gray;
+
+			    background: white;
+			    color: black;
+			}
+
+			input:checked ~ .menu, input:checked ~ .square {
+				display: block;
+				background: blue;
+			}
+
+			input:not(:checked) ~ .menu, input:not(:checked) ~ .square {
+				display: none;
+			}
+
+			input {
+				display: none;
+			}
+
+			.bag-button {
+				position: relative;
+			}
+
+			.menu {
+				box-sizing: border-box;
+				width: 286px;
+				left: -113px;
+				top: 34px;
+			}
+
+			.square {
+				position: absolute;
+				top: 29px;
+				right: 0;
+				z-index: 1;
+
+				width: 10px;
+				height: 10px;
+				border-top: 1px solid grey;
+				border-left: 1px solid grey;
+
+				background: blue;
+				transform: rotate(45deg);
+			}
+
+			@media only screen and (max-width: 1060px) {
+				.bag-button {
+					position: initial;
+				}
+
+				.menu {
+					left: unset;
+					right: 10px;
+					top: 80px;
+				}
+			}						
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="content">
+				<a>A</a>
+				<a>Mac</a>
+				<a>iPad</a>
+				<a>iPhone</a>
+				<a>Watch</a>
+				<a>Music</a>
+				<a>Support</a>
+				<a class="bag-button">
+				?
+				<label>
+					B
+					<input type="checkbox" />
+					<div class="square"></div>									
+					<div class="menu">
+						<span>你的购物袋是空的</span>
+					</div>
+				</label>
+				</a>
+
+			</div>
+		</nav>
+	</body>
+</html>
